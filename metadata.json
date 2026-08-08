@@ -1,0 +1,10 @@
+{
+  "name": "Campus 2026",
+  "description": "An immersive academic English learning game styled as a first-semester university narrative adventure.",
+  "requestFramePermissions": [
+    "microphone"
+  ],
+  "majorCapabilities": [
+    "MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"
+  ]
+}

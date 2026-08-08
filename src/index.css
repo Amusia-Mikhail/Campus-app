@@ -1,0 +1,167 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Lora:ital,wght@0,400;0,500;0,600;1,400&family=JetBrains+Mono:wght@400;500;600&display=swap');
+@import "tailwindcss";
+
+@variant dark (&:where(.dark, .dark *));
+
+@theme {
+  --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
+  --font-serif: "Lora", ui-serif, Georgia, Cambria, serif;
+  --font-mono: "JetBrains Mono", ui-monospace, SFMono-Regular, monospace;
+
+  --color-terracotta: #c05c46;
+  --color-terracotta-dark: #a14532;
+  --color-burgundy: #6b2d2d;
+  --color-navy: #13253a;
+  --color-navy-light: #243c5a;
+  --color-cream: #fbf9f4;
+  --color-cream-card: #f5f0e6;
+  --color-sage: #5c7f67;
+  --color-sage-light: #eff4f0;
+  
+  --animate-fade-in: fade-in 0.3s ease-out;
+  --animate-scale-up: scale-up 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+@keyframes fade-in {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes scale-up {
+  from { transform: scale(0.95); opacity: 0; }
+  to { transform: scale(1); opacity: 1; }
+}
+
+@keyframes floatMug {
+  0%, 100% {
+    transform: translateY(0px) rotate(0deg);
+  }
+  50% {
+    transform: translateY(-7px) rotate(-1.5deg);
+  }
+}
+
+@keyframes steamRise {
+  0% {
+    transform: translateY(2px) scaleX(0.7) scaleY(0.5);
+    opacity: 0;
+  }
+  30% {
+    opacity: 0.8;
+  }
+  100% {
+    transform: translateY(-24px) scaleX(1.4) scaleY(1.2);
+    opacity: 0;
+  }
+}
+
+@keyframes steamBurst {
+  0% {
+    transform: translateY(0px) scale(0.5);
+    opacity: 0;
+  }
+  50% {
+    opacity: 0.9;
+    transform: translateY(-28px) scale(1.6);
+  }
+  100% {
+    opacity: 0;
+    transform: translateY(-42px) scale(2.2);
+  }
+}
+
+.animate-float-mug {
+  animation: floatMug 3.2s ease-in-out infinite;
+}
+
+.animate-steam-1 {
+  animation: steamRise 2.2s ease-out infinite;
+}
+
+.animate-steam-2 {
+  animation: steamRise 2.2s ease-out infinite 0.75s;
+}
+
+.animate-steam-3 {
+  animation: steamRise 2.2s ease-out infinite 1.5s;
+}
+
+@keyframes steamWisp {
+  0% {
+    transform: translate3d(0, 2px, 0) scaleX(0.7) scaleY(0.6);
+    opacity: 0;
+  }
+  25% {
+    opacity: 0.85;
+  }
+  60% {
+    transform: translate3d(3px, -10px, 0) scaleX(1.2) scaleY(1.1);
+    opacity: 0.5;
+  }
+  100% {
+    transform: translate3d(-3px, -20px, 0) scaleX(1.6) scaleY(1.4);
+    opacity: 0;
+  }
+}
+
+.animate-steam-wisp-1 {
+  animation: steamWisp 2.4s cubic-bezier(0.4, 0, 0.2, 1) infinite 0s;
+  will-change: transform, opacity;
+}
+
+.animate-steam-wisp-2 {
+  animation: steamWisp 2.4s cubic-bezier(0.4, 0, 0.2, 1) infinite 0.6s;
+  will-change: transform, opacity;
+}
+
+.animate-steam-wisp-3 {
+  animation: steamWisp 2.4s cubic-bezier(0.4, 0, 0.2, 1) infinite 1.2s;
+  will-change: transform, opacity;
+}
+
+.gpu-accelerated {
+  will-change: transform, opacity;
+  transform: translate3d(0, 0, 0);
+  backface-visibility: hidden;
+}
+
+/* Base style resets */
+html, body, #root {
+  background-color: #fbf9f4;
+  color: #13253a;
+  font-family: var(--font-sans);
+  margin: 0;
+  padding: 0;
+  overflow: hidden; /* Prevent body scroll, the mobile frame container will handle scrolling */
+  min-height: 100%;
+  height: 100%;
+}
+
+.dark html, .dark body, .dark #root {
+  background-color: #020617;
+  color: #f1f5f9;
+}
+
+/* Custom scrollbars for a neat look */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+::-webkit-scrollbar-thumb {
+  background: #cbd5e1;
+  border-radius: 3px;
+}
+.dark ::-webkit-scrollbar-thumb {
+  background: #334155;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #94a3b8;
+}
+
+/* Prevent iOS auto-zoom on focus by enforcing a minimum 16px font-size */
+input, textarea, select {
+  font-size: 16px !important;
+}
