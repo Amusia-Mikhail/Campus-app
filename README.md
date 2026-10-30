@@ -1,6 +1,6 @@
 # Campus — Narrative-Driven Mobile & Web RPG for Academic Exam Preparation (TOEFL iBT / IELTS)
 
-> **Note:** This repository is a snapshot of Campus from 8 August 2026 and is out of date. The current version has completed closed beta testing and has been submitted to Google for final review before publication on Google Play. Live web version:(https://campus-english.onrender.com)
+> **Note:** This repository is a snapshot of Campus from 8 August 2026 and is out of date. The current version has completed closed beta testing and has been submitted to Google for final review before publication on Google Play. Live web version: https://campus-english.onrender.com
 
 > Campus is a commercial-grade, narrative-driven mobile and web RPG engineered as a core showcase component within an educational ecosystem comprising 4 distinct products. It bridges the gap between engaging AI narrative mechanics and strict TOEFL iBT / IELTS academic test preparation. 
 
