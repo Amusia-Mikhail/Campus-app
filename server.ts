@@ -40,7 +40,7 @@ function loadKeysStore(): KeysStore {
   }
 
   const defaultStore: KeysStore = {
-    password: process.env.ADMIN_PASSWORD || 'admin',
+    password: process.env.ADMIN_PASSWORD ?? '',   
     keys: process.env.GEMINI_API_KEY ? [process.env.GEMINI_API_KEY] : [],
     model: 'gemini-2.5-flash'
   };
